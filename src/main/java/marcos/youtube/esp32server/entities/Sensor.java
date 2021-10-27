@@ -13,7 +13,7 @@ public class Sensor implements Serializable {
     // Columns
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_sensor;
+    private Long idSensor;
 
     @Column(nullable = false, unique = true)
     private Integer code;
@@ -32,8 +32,8 @@ public class Sensor implements Serializable {
 
     }
 
-    public Sensor(Long id_sensor, Integer code, String name, Float latestTemp, Float latestHum) {
-        this.id_sensor = id_sensor;
+    public Sensor(Long idSensor, Integer code, String name, Float latestTemp, Float latestHum) {
+        this.idSensor = idSensor;
         this.code = code;
         this.name = name;
         this.latestTemp = latestTemp;
@@ -41,12 +41,12 @@ public class Sensor implements Serializable {
     }
 
 
-    public Long getId_sensor() {
-        return this.id_sensor;
+    public Long getidSensor() {
+        return this.idSensor;
     }
 
-    public void setId_sensor(Long id) {
-        this.id_sensor = id;
+    public void setidSensor(Long id) {
+        this.idSensor = id;
     }
 
     public Integer getCode() {
@@ -86,7 +86,7 @@ public class Sensor implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Sensor sensor = (Sensor) o;
-        return id_sensor.equals(sensor.id_sensor) &&
+        return idSensor.equals(sensor.idSensor) &&
                 code.equals(sensor.code) &&
                 name.equals(sensor.name) &&
                 latestTemp.equals(sensor.latestTemp) &&
@@ -95,6 +95,6 @@ public class Sensor implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id_sensor, code, name, latestTemp, latestHum);
+        return Objects.hash(idSensor, code, name, latestTemp, latestHum);
     }
 }
